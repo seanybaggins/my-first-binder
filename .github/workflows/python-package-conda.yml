@@ -27,3 +27,9 @@ jobs:
     - name: Convert ipynb to html
       run: |
         nbinteract -s seanybaggins/my-first-binder/main hello.ipynb
+    - name: Publish
+      uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
