@@ -1,0 +1,11 @@
+name: test-nbinteract
+channels:
+  - defaults
+  - conda-forge
+dependencies: 
+  - python=3.8.11
+  - numpy
+  - jupytext
+  - pip # Pip and pip dependencies should always be last
+  - pip:
+    - nbinteract
