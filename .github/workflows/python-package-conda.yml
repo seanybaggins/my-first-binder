@@ -28,9 +28,10 @@ jobs:
     - name: Convert python to ipynb
       run: |
         jupytext --from py --to ipynb hello.py
+        mv hello.ipynb index.ipynb
     - name: Convert ipynb to html
       run: |
-        nbinteract -s seanybaggins/my-first-binder/main hello.ipynb
+        nbinteract -s seanybaggins/my-first-binder/main index.ipynb
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
