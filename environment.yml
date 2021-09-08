@@ -1,0 +1,7 @@
+name: test-nbinteract
+dependencies: 
+  - python=3.8.11
+  - numpy
+  - pip # Pip and pip dependencies should always be last
+  - pip:
+    - nbinteract
