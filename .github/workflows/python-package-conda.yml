@@ -1,6 +1,10 @@
-name: Python Package using Conda
+name: GitHub Pages
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
   build-linux:
@@ -27,7 +31,7 @@ jobs:
     - name: Convert ipynb to html
       run: |
         nbinteract -s seanybaggins/my-first-binder/main hello.ipynb
-    - name: Publish
+    - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
